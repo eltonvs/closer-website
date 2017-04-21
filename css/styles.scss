@@ -104,8 +104,8 @@ $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 
-$font-base: .875;
-$font-size-base: ($font-base * 1rem) !default; // Assumes the browser default, typically `16px`
+$font-base: .875; // 1 is 16px, so 0.875% is 14px
+$font-size-base: ($font-base * 1rem) !default;
 $font-size-lg:   ($font-base * 1.25rem) !default;
 $font-size-sm:   ($font-base * .875rem) !default;
 $font-size-xs:   ($font-base * .75rem) !default;
