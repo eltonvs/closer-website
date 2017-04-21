@@ -104,34 +104,35 @@ $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:   1.25rem !default;
-$font-size-sm:   .875rem !default;
-$font-size-xs:   .75rem !default;
+$font-base: .875;
+$font-size-base: ($font-base * 1rem) !default; // Assumes the browser default, typically `16px`
+$font-size-lg:   ($font-base * 1.25rem) !default;
+$font-size-sm:   ($font-base * .875rem) !default;
+$font-size-xs:   ($font-base * .75rem) !default;
 
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
 $font-weight-base: $font-weight-normal !default;
-$line-height-base: 1.5 !default;
+$line-height-base: ($font-base * 1.5) !default;
 
-$font-size-h1: 2.5rem !default;
-$font-size-h2: 2rem !default;
-$font-size-h3: 1.75rem !default;
-$font-size-h4: 1.5rem !default;
-$font-size-h5: 1.25rem !default;
-$font-size-h6: 1rem !default;
+$font-size-h1: ($font-base * 2.5rem) !default;
+$font-size-h2: ($font-base * 2rem) !default;
+$font-size-h3: ($font-base * 1.75rem) !default;
+$font-size-h4: ($font-base * 1.5rem) !default;
+$font-size-h5: ($font-base * 1.25rem) !default;
+$font-size-h6: ($font-base * 1rem) !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family:   inherit !default;
 $headings-font-weight:   500 !default;
-$headings-line-height:   1.1 !default;
+$headings-line-height:   ($font-base * 1.1) !default;
 $headings-color:         inherit !default;
 
-$display1-size: 6rem !default;
-$display2-size: 5.5rem !default;
-$display3-size: 4.5rem !default;
-$display4-size: 3.5rem !default;
+$display1-size: ($font-base * 6rem) !default;
+$display2-size: ($font-base * 5.5rem) !default;
+$display3-size: ($font-base * 4.5rem) !default;
+$display4-size: ($font-base * 3.5rem) !default;
 
 $display1-weight:     300 !default;
 $display2-weight:     300 !default;
@@ -139,7 +140,7 @@ $display3-weight:     300 !default;
 $display4-weight:     300 !default;
 $display-line-height: $headings-line-height !default;
 
-$lead-font-size:   1.25rem !default;
+$lead-font-size:   ($font-size-base * 1.25) !default;
 $lead-font-weight: 300 !default;
 
 $small-font-size: 80% !default;
