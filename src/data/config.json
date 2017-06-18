@@ -1,0 +1,26 @@
+{
+  "title": "Closer",
+  "description": "A smarter way for shopping",
+  "mobile": {
+  	"theme_color": "#ffffff",
+  	"mask_icon_color": "#5bbad5"
+  },
+  "social": {
+  	"twitter": {
+  		"card": "photo",
+  		"site": "",
+  		"url": "",
+  		"title": "Closer - A smarter way for shopping",
+  		"image": ""
+  	},
+  	"open_graph": {
+  		"title": "Closer",
+  		"description": "A smarter way for shopping",
+  		"image": "",
+  		"url": ""
+  	}
+  },
+  "analytics": {
+  	"ga": false
+  }
+}

@@ -1,0 +1,79 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description' content='meta desc')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    block title
+      title #{config.title} - #{config.description}
+
+    //- ==================================================
+    //- Webapp
+    //- ==================================================
+
+    link(rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png')
+    link(rel='icon' type='image/png' href='/favicon/favicon-32x32.png' sizes='32x32')
+    link(rel='icon' type='image/png' href='/favicon/favicon-16x16.png' sizes='16x16')
+    //- link(rel='manifest' href='/manifest.json')
+    link(rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color=config.mobile.mask_icon_color)
+    meta(name='apple-mobile-web-app-title' content=config.title)
+    meta(name='application-name' content=config.title)
+    meta(name='theme-color' content=config.mobile.theme_color)
+
+    //- ==================================================
+    //- Stylesheets
+    //- ==================================================
+
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='css/custom_bootstrap.css')
+    link(rel='stylesheet' href='css/style.css')
+    block stylesheets
+
+    //- ==================================================
+    //- GA
+    //- ==================================================
+
+    if ((config) && (config.analytics) && (config.analytics.ga))
+      script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '#{config.analytics.ga}', 'auto');
+        ga('send', 'pageview');
+
+
+  body
+    block navbar
+      nav.navbar.navbar-expand-md.navbar-light.bg-faded.fixed-top
+        .container
+          a.navbar-brand(href='/#featured') Closer
+          button.navbar-toggler.navbar-toggler-right(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          .collapse.navbar-collapse.justify-content-end#navbarSupportedContent
+            ul.navbar-nav
+              li.nav-item: a.nav-link(href='/#about') About
+              li.nav-item: a.nav-link(href='/#benefits') Benefits
+              li.nav-item: a.nav-link(href='/#pricing') Pricing
+              li.nav-item: a.nav-link(href='/#contact') Contact
+              li.nav-item: a.nav-link(href='/#blog') Blog
+              li.nav-item: a.nav-link(href='/login.html') Sign in
+
+    block content
+
+    block footer
+      footer.py-3.bg-primary.text-center
+        .container
+          .row.justify-content-center.text-white &copy; Copyright 2017 - All rights reserved. #[br] Developed by Elton, Johnnylee and Thais.
+
+    //- ==================================================
+    //- Scripts
+    //- ==================================================
+
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js')
+    script(src='js/main.js')
+    block scripts
