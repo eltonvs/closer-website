@@ -1,3 +1,5 @@
+block variables
+
 doctype html
 html(lang='en')
   head
@@ -6,7 +8,9 @@ html(lang='en')
     meta(name='description' content='meta desc')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 
-    block title
+    if page_title
+      title #{page_title} - #{config.title}
+    else
       title #{config.title} - #{config.description}
 
     //- ==================================================
@@ -32,7 +36,7 @@ html(lang='en')
     block stylesheets
 
     //- ==================================================
-    //- GA
+    //- Gogle Analytics
     //- ==================================================
 
     if ((config) && (config.analytics) && (config.analytics.ga))
@@ -47,19 +51,6 @@ html(lang='en')
 
   body
     block navbar
-      nav.navbar.navbar-expand-md.navbar-light.bg-faded.fixed-top
-        .container
-          a.navbar-brand(href='/#featured') Closer
-          button.navbar-toggler.navbar-toggler-right(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-          .collapse.navbar-collapse.justify-content-end#navbarSupportedContent
-            ul.navbar-nav
-              li.nav-item: a.nav-link(href='/#about') About
-              li.nav-item: a.nav-link(href='/#benefits') Benefits
-              li.nav-item: a.nav-link(href='/#pricing') Pricing
-              li.nav-item: a.nav-link(href='/#contact') Contact
-              li.nav-item: a.nav-link(href='/#blog') Blog
-              li.nav-item: a.nav-link(href='/login.html') Sign in
 
     block content
 

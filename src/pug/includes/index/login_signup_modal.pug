@@ -1,0 +1,33 @@
+.modal.fade#login-signup-modal(tabindex='-1' role='dialog' aria-hidden='true' style='display: none;')
+  .modal-dialog
+    .modal-content
+      .modal-header.text-center
+        h3#modal-login-signup-title Login
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span.fa.fa-remove(aria-hidden='true')
+      #forms-container
+        form#login-form
+          .modal-body
+            .form-group#div-login-msg Type your username and password
+            .form-group
+              input.form-control#login_email(type='email' placeholder='Email' required)
+            .form-group
+              input.form-control#login_password(type='password' placeholder='Password' required)
+            button.btn.btn-primary.btn-block(type='submit') Login
+          .modal-footer: p.
+            You aren't registered yet? #[a#signup_btn(href='#') Sign up]
+        form#signup-form(style='display: none;')
+          .modal-body
+            .form-group#div-signup-msg Register an account
+            .form-group
+              input.form-control#signup_name(type='text' placeholder='Name' required)
+              small.form-text.text-muted#signup-name-validation
+            .form-group
+              input.form-control#signup_email(type='text' placeholder='Email' required)
+              small.form-text.text-muted#signup-email-validation
+            .form-group
+              input.form-control#signup_password(type='password' placeholder='Password' required)
+              small.form-text.text-muted#signup-password-validation
+            button.btn.btn-primary.btn-block(type='submit') Register
+          .modal-footer: p.
+            You already have an account? #[a#login_btn(href='#') Log in]

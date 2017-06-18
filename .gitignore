@@ -1,6 +1,6 @@
 build/
 
-# Created by https://www.gitignore.io/api/node,stylus
+# Created by https://www.gitignore.io/api/node
 
 ### Node ###
 # Logs
@@ -62,8 +62,4 @@ typings/
 # dotenv environment variables file
 .env
 
-
-### Stylus ###
-*.css
-
-# End of https://www.gitignore.io/api/node,stylus
+# End of https://www.gitignore.io/api/node

@@ -1,128 +1,16 @@
 extends templates/layout.pug
 
+block navbar
+  include includes/index/navbar.pug
+
 block content
-  section.bg-primary.text-center.d-flex.align-items-center#featured
-    .container
-      .row
-        .col-lg-12
-          h1.display-1.text-white Closer
-          p.lead.text-white A smarter way for shopping
-          a.btn.btn-lg.btn-secondary(href='#about') Discover
-  section.py-5.section#about
-    .container
-      .row
-        .col-md-12.text-center
-          h2.text-primary.text-uppercase.mb-4 About us
-          p.mb-3 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-      .row.mt-3
-        .col-md-6
-          h3.text-sm-center.text-primary.mb-3 Software
-          img.center-block.d-block.mx-auto.mb-3(height='200px' src='img/software.png')
-          p.text-justify.mt-3 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-        .col-md-6
-          h3.text-sm-center.text-primary.mb-3 Hardware
-          img.center-block.d-block.mx-auto.mb-3(height='200px' src='img/sensortag.png')
-          p.text-justify Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-  section.py-5.bg-primary.text-center#sec-social
-    .container: .row
-      .col: a(href='#'): i.fa.fa-3x.fa-fw.fa-facebook.text-white
-      .col: a(href='#'): i.fa.fa-3x.fa-fw.fa-twitter.text-white
-      .col: a(href='#'): i.fa.fa-3x.fa-fw.fa-instagram.text-white
-  section.py-5.section#benefits
-    .container
-      .row
-        .col-md-12.text-center
-          h2.text-primary.text-uppercase.mb-4 Benefits
-      .row
-        .col-md-4
-          img.center-block.img-fluid.d-block.my-3(src='img/thumb.jpg')
-          h3.text-sm-center.text-primary Price
-          p.text-justify.my-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-        .col-md-4
-          img.center-block.img-fluid.d-block.my-3(src='img/thumb.jpg')
-          h3.text-sm-center.text-primary Conversion Rate
-          p.text-justify.my-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-        .col-md-4
-          img.center-block.img-fluid.d-block.my-3(src='img/thumb.jpg')
-          h3.text-sm-center.text-primary Benefit 3
-          p.text-justify.my-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-  section.py-5.section.text-center.bg-primary#testimonials
-    .container
-      .row
-        .col-md-12
-          p.lead.text-white "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-          p.lead.text-white.my-0: strong Someone Famous
-          p.text-white Some Company
-  section.py-5.text-center#pricing
-    .container
-      .row
-        .col-md-12.text-center
-          h2.text-primary.text-uppercase.mb-4 Pricing
-      .row
-        .col-md-4
-          .card.my-1
-            .card-block.text-center
-              h2 Small
-              h3 10 $
-            ul.list-group.list-group-flush
-              li.list-group-item Cras justo odio
-              li.list-group-item Dapibus ac facilisis in
-              li.list-group-item Vestibulum at eros
-            .card-block
-              a.btn.btn-block.btn-primary(href='#') Buy
-        .col-md-4
-          .card
-            .bg-primary.card-block
-              h1.card-title.text-white Normal
-              h2.text-white 20 $
-            ul.list-group.list-group-flush
-              li.list-group-item Cras justo odio
-              li.list-group-item Dapibus ac facilisis in
-              li.list-group-item Vestibulum at eros
-            .card-block
-              a.btn.btn-block.btn-lg.btn-primary(href='#') Buy
-        .col-md-4
-          .card.my-1
-            .card-block.text-xs-center
-              h2.card-title Large
-              h3 30 $
-            ul.list-group.list-group-flush
-              li.list-group-item Cras justo odio
-              li.list-group-item Dapibus ac facilisis in
-              li.list-group-item Vestibulum at eros
-            .card-block
-              a.btn.btn-block.btn-primary(href='#') Buy
-  section.bg-faded.py-5#contact
-    .container
-      .row
-        .col-md-12.text-center
-          h2.text-primary.text-uppercase.mb-4 Contact
-      .row.justify-content-center
-        .col-md-6
-          form
-            fieldset.form-group
-              label(for='input-name') Your name
-              input#input-name.form-control(type='text', placeholder='Your name')
-            fieldset.form-group
-              label(for='input-email') Email address
-              input#input-email.form-control(type='email', placeholder='Enter email')
-            fieldset.form-group
-              label(for='input-message') Message
-              textarea#input-message.form-control(rows='3', placeholder='Enter message')
-            button.btn.btn-primary.btn-block(type='submit') Submit
-  section.py-5.section#blog
-    .container
-      .row
-        .col-md-12.text-center
-          h2.text-primary.text-uppercase.mb-4 Our Blog
-      .row
-        for i in [1, 2, 3]
-          .col-md-4.blog-post: .row
-            .col
-              img.center-block.img-fluid.d-block(src='img/thumb.jpg')
-            .col-7
-              h2.text-primary
-                a(href='#') Blog Post #{i}
-              p.my-1 Lorem ipsum dolor sit amet...
-      .col-xs-12.text-right.mt-4
-        a(href='#') See more blog posts #[i.fa.fa-chevron-right]
+  include includes/index/featured_section.pug
+  include includes/index/about_section.pug
+  include includes/index/social_section.pug
+  include includes/index/benefits_section.pug
+  include includes/index/testimonials_section.pug
+  include includes/index/pricing_section.pug
+  include includes/index/contact_section.pug
+  include includes/index/blog_section.pug
+
+  include includes/index/login_signup_modal.pug

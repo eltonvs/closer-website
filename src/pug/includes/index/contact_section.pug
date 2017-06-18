@@ -1,0 +1,18 @@
+section.bg-faded.py-5#contact
+  .container
+    .row
+      .col-md-12.text-center
+        h2.text-primary.text-uppercase.mb-4 Contact
+    .row.justify-content-center
+      .col-md-6
+        form
+          fieldset.form-group
+            label(for='input-name') Your name
+            input#input-name.form-control(type='text' placeholder='Your name')
+          fieldset.form-group
+            label(for='input-email') Email address
+            input#input-email.form-control(type='email' placeholder='Enter email')
+          fieldset.form-group
+            label(for='input-message') Message
+            textarea#input-message.form-control(rows='3' placeholder='Enter message')
+          button.btn.btn-primary.btn-block(type='submit') Submit

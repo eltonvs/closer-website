@@ -1,0 +1,16 @@
+section.py-5.section#blog
+  .container
+    .row
+      .col-md-12.text-center
+        h2.text-primary.text-uppercase.mb-4 Our Blog
+    .row
+      for i in [1, 2, 3]
+        .col-md-4.blog-post: .row
+          .col
+            img.center-block.img-fluid.d-block(src='img/thumb.jpg')
+          .col-7
+            h2.text-primary
+              a(href='#') Blog Post #{i}
+            p.my-1 Lorem ipsum dolor sit amet...
+    .col-xs-12.text-right.mt-4
+      a(href='#') See more blog posts #[i.fa.fa-chevron-right]
