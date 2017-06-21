@@ -6,28 +6,33 @@
         button.close(type='button' data-dismiss='modal' aria-label='Close')
           span.fa.fa-remove(aria-hidden='true')
       #forms-container
-        form#login-form
+        form#login-form(method='POST')
           .modal-body
-            .form-group#div-login-msg Type your username and password
+            #login-alert
+            .form-group Type your username and password
             .form-group
-              input.form-control#login_email(type='email' placeholder='Email' required)
+              input.form-control#login_email(name='email' type='email' placeholder='Email' required)
             .form-group
-              input.form-control#login_password(type='password' placeholder='Password' required)
+              input.form-control#login_password(name='password' type='password' placeholder='Password' required)
             button.btn.btn-primary.btn-block(type='submit') Login
           .modal-footer: p.
             You aren't registered yet? #[a#signup_btn(href='#') Sign up]
-        form#signup-form(style='display: none;')
+        form#signup-form(method='POST')
           .modal-body
-            .form-group#div-signup-msg Register an account
+            #signup-alert
+            .form-group Register an account
             .form-group
-              input.form-control#signup_name(type='text' placeholder='Name' required)
+              input.form-control#signup_name(name='name' type='text' placeholder='Name' required)
               small.form-text.text-muted#signup-name-validation
             .form-group
-              input.form-control#signup_email(type='text' placeholder='Email' required)
+              input.form-control#signup_email(name='email' type='text' placeholder='Email' required)
               small.form-text.text-muted#signup-email-validation
             .form-group
-              input.form-control#signup_password(type='password' placeholder='Password' required)
+              input.form-control#signup_password(name='password' type='password' placeholder='Password' required)
               small.form-text.text-muted#signup-password-validation
+            .form-group
+              input.form-control#signup_password(name='confpassword' type='password' placeholder='Password Confirmation' required)
+              small.form-text.text-muted#signup-confpassword-validation
             button.btn.btn-primary.btn-block(type='submit') Register
           .modal-footer: p.
             You already have an account? #[a#login_btn(href='#') Log in]

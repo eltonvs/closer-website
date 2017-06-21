@@ -22,5 +22,14 @@
   },
   "analytics": {
   	"ga": false
+  },
+  "server": {
+    "auth_url": "http://localhost/projeto_web_php/server/auth.php",
+    "check_url": "http://localhost/projeto_web_php/server/check.php",
+    "dash_url": "http://localhost/projeto_web_php/server/dash.php",
+    "logout_url": "http://localhost/projeto_web_php/server/logout.php",
+    "register_product_url": "http://localhost/projeto_web_php/server/register_product.php",
+    "register_url": "http://localhost/projeto_web_php/server/register.php",
+    "remove_product_url": "http://localhost/projeto_web_php/server/remove_product.php"
   }
 }

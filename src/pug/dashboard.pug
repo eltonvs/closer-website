@@ -1,0 +1,38 @@
+extends templates/layout.pug
+
+block variables
+  -
+    logged_only = true
+    loading_div = true
+
+block navbar
+  include includes/dashboard/navbar.pug
+
+block content
+  main#dashboard
+    section.py-5.section#welcome
+      .container
+        .row
+          .col-md-12.text-center
+            h2.text-primary.text-uppercase.mb-4 Hello, #[span#user-name]!
+    section.section
+      .container
+        .row
+          .col-xs-12.col-md-6
+            h2.text-primary.py-3.text-center Registered Products
+            .col-md-12.py-2
+              #products-list
+            h4.py-3 Register New Product
+            .col-md-12.py2
+              form.form-inline#register-product
+                .form-group
+                  input.form-control.mr-3(name='name' type='text' placeholder='Name' required)
+                  button.btn.btn-primary(type='submit') Register
+
+          .col-xs-12.col-md-6
+            h3.text-primary.py-3.text-center Graphs
+            .col-md-12.py-2
+              canvas#canvas
+
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js')

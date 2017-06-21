@@ -6,6 +6,8 @@ module.exports = {
   	"node": true
   },
   "globals": {
+    "CONFIG": true,
+    "do_logout": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {

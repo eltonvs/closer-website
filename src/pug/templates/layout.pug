@@ -1,3 +1,7 @@
+-
+  let logged_only = false,
+      loading_div = false
+
 block variables
 
 doctype html
@@ -13,15 +17,30 @@ html(lang='en')
     else
       title #{config.title} - #{config.description}
 
+    if logged_only
+      //- ==================================================
+      //- Redirect user if he isn't logged in
+      //- ==================================================
+      script.
+        let dash_req = new XMLHttpRequest()
+        dash_req.onload = () => {
+          let response = JSON.parse(dash_req.responseText)
+          if (!response.status) {
+            window.location.replace('index.html');
+          }
+        }
+        dash_req.open('GET', '#{config.server.check_url}', true)
+        dash_req.send()
+
     //- ==================================================
     //- Webapp
     //- ==================================================
 
-    link(rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png')
-    link(rel='icon' type='image/png' href='/favicon/favicon-32x32.png' sizes='32x32')
-    link(rel='icon' type='image/png' href='/favicon/favicon-16x16.png' sizes='16x16')
+    link(rel='apple-touch-icon' sizes='180x180' href='favicon/apple-touch-icon.png')
+    link(rel='icon' type='image/png' href='favicon/favicon-32x32.png' sizes='32x32')
+    link(rel='icon' type='image/png' href='favicon/favicon-16x16.png' sizes='16x16')
     //- link(rel='manifest' href='/manifest.json')
-    link(rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color=config.mobile.mask_icon_color)
+    link(rel='mask-icon' href='favicon/safari-pinned-tab.svg' color=config.mobile.mask_icon_color)
     meta(name='apple-mobile-web-app-title' content=config.title)
     meta(name='application-name' content=config.title)
     meta(name='theme-color' content=config.mobile.theme_color)
@@ -59,12 +78,17 @@ html(lang='en')
         .container
           .row.justify-content-center.text-white &copy; Copyright 2017 - All rights reserved. #[br] Developed by Elton, Johnnylee and Thais.
 
+    if loading_div
+      #loading-div: img(src='img/spinner.gif')
+
     //- ==================================================
     //- Scripts
     //- ==================================================
 
+    script.
+      let CONFIG = !{JSON.stringify(config)}
     script(src='https://code.jquery.com/jquery-3.1.1.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js')
-    script(src='js/main.js')
     block scripts
+    script(src='js/main.js')
