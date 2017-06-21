@@ -32,4 +32,4 @@ if (empty($email) or empty($password) or empty($confpassword)) {
 }
 
 header('Content-Type: application/json');
-echo json_encode($return);
+echo json_encode($return, JSON_UNESCAPED_UNICODE);

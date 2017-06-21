@@ -2,12 +2,11 @@
 
 header('Access-Control-Allow-Origin: *');
 
-session_id('123');
-session_start();
-session_unset();
-session_destroy();
+require "utils.php";
+
+logout();
 
 $return = array('status' => empty(session_id()));
 
 header('Content-Type: application/json');
-echo json_encode($return);
+echo json_encode($return, JSON_UNESCAPED_UNICODE);

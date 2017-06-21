@@ -9,4 +9,4 @@ $return = array();
 $return['status'] = check_login();
 
 header('Content-Type: application/json');
-echo json_encode($return);
+echo json_encode($return, JSON_UNESCAPED_UNICODE);

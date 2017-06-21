@@ -111,16 +111,20 @@ function get_session() {
     return $_SESSION;
 }
 
+function logout() {
+    session_unset();
+    session_destroy();
+}
+
 function dash_info() {
     if (!check_login()) {
-        require 'logout.php';
+        logout();
         return null;
     }
 
     $return = array();
     $return['name'] = $_SESSION['name'];
     $return['email'] = $_SESSION['email'];
-    $return['rand'] = random_int(0, 100);
     $return['products'] = get_registered_products($_SESSION['email']);
     return $return;
 }

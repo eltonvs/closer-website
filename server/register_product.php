@@ -21,4 +21,4 @@ if (empty($name) or empty($user)) {
 }
 
 header('Content-Type: application/json');
-echo json_encode($return);
+echo json_encode($return, JSON_UNESCAPED_UNICODE);
